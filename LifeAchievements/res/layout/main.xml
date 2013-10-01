@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <Button android:id="@+id/buttonMyCheevos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Achievements" android:onClick="goToMyCheevosView"/>
+    <Button android:id="@+id/buttonEnterActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter activity" android:onClick="goToEnterActivityView"/>
+    <Button android:id="@+id/buttonAllCheevos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All achievements" />
+</LinearLayout>

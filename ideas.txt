@@ -1,0 +1,38 @@
+LIFE ACHIEVEMENTS
+
+Nivåer för varje cheevo:
+    earth, wood, rock (diamond?)
+
+träna 2 ggr i veckan senaste tiden (2v, 4v, 8v, 12v)
+träna 3 ggr i veckan senaste tiden (2v, 4v, 6v, 10v)
+träna 4 ggr i veckan senaste tiden (1v, 2v, 4v, 6v)
+träna 5 ggr i veckan senaste tiden (1v, 2v, 3v, 5v)
+
+2 eller färre måltider på snabbmat i veckan (2v, 4v, 8v, 12v)
+1 eller färre (2v, 4v, 6v, 10v)
+inga (1v, 2v, 4v, 6v)
+
+5 måltider i veckan på hemlagad mat (2v, 4v, 8v, 12v)
+8 (2v, 4v, 6v, 10v)
+12 (1v, 2v, 4v, 6v)
+
+2 eller färre portioner läsk, juice, smoothies eller godis i veckan (2v, 4v, 8v, 12v)
+1 eller färre (2v, 4v, 6v, 10v)
+inga (1v, 2v, 4v, 6v)
+
+5 eller färre kakor eller bakverk i veckan
+3 eller färre
+inga
+
+1 dag i veckan ensam utan film eller dataspel OCH 1 dag i veckan med vänner utan alkohol (2v, 4v, 8v, 12v)
+2 dagar som ovan (2v, 4v, 6v, 10v)
+3 dagar som ovan (1v, 2v, 4v, 6v)
+
+Pengar till välgörenhet denna månad
+0,5% av lönen (2m, 3m, 4m, 6m)
+1% (2m, 3m, 4m, 6m)
+2% (2m, 3m, 4m, 6m)
+
+
+Brush Script Std, 72
+Outline 7/100
