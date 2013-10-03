@@ -2,6 +2,7 @@ package se.lolektivet.linus.lifeachievements;
 
 import android.content.Context;
 import android.util.Log;
+import se.lolektivet.linus.lifeachievements.core.Habits;
 
 import java.io.*;
 
@@ -16,7 +17,7 @@ public class SaveFileHandler
     private static final String HABIT_FILE_NAME = "habits.dat";
     private static final String LOG_TAG = "LifeAchievements";
 
-    void writeHabitFile(Context context, Habits habits) {
+    public void writeHabitFile(Context context, Habits habits) {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         try {
@@ -41,7 +42,7 @@ public class SaveFileHandler
         }
     }
 
-    Habits readHabitsFromFile(Context context) {
+    public Habits readHabitsFromFile(Context context) {
         Habits habits = new Habits();
         FileInputStream fis;
         try {

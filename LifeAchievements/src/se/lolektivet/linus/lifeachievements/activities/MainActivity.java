@@ -1,9 +1,10 @@
-package se.lolektivet.linus.lifeachievements;
+package se.lolektivet.linus.lifeachievements.activities;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import se.lolektivet.linus.lifeachievements.R;
 
 /**
  * Created with IntelliJ IDEA.

@@ -1,4 +1,4 @@
-package se.lolektivet.linus.lifeachievements;
+package se.lolektivet.linus.lifeachievements.activities;
 
 import android.content.Context;
 import android.util.Log;
@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
+import se.lolektivet.linus.lifeachievements.core.Badge;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,13 +19,6 @@ public class BadgeArrayAdapter extends ArrayAdapter<Badge>
 {
     private int _resourceId;
     private LayoutInflater _inflater;
-
-    public BadgeArrayAdapter(Context context, int resource)
-    {
-        super(context, resource);
-        _resourceId = resource;
-        _inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-    }
 
     public BadgeArrayAdapter(Context context, int resource, Badge[] objects)
     {

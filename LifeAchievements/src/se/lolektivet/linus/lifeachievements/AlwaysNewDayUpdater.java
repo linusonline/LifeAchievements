@@ -1,5 +1,8 @@
 package se.lolektivet.linus.lifeachievements;
 
+import se.lolektivet.linus.lifeachievements.core.Habit;
+import se.lolektivet.linus.lifeachievements.core.Updater;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Linus

@@ -1,4 +1,4 @@
-package se.lolektivet.linus.lifeachievements;
+package se.lolektivet.linus.lifeachievements.core;
 
 import java.io.Serializable;
 

@@ -3,6 +3,8 @@ package se.lolektivet.linus.lifeachievements;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+import se.lolektivet.linus.lifeachievements.core.AchievementPattern;
+import se.lolektivet.linus.lifeachievements.core.Habit;
 
 /**
  * Created with IntelliJ IDEA.

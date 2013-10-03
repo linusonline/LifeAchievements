@@ -1,4 +1,4 @@
-package se.lolektivet.linus.lifeachievements;
+package se.lolektivet.linus.lifeachievements.core;
 
 import android.util.Log;
 
@@ -19,23 +19,23 @@ public class Habits implements Serializable
     private static final String LOG_TAG = "LifeAchievements";
 
     private Habit _allHabits[];
-    static final int HABIT_WORKOUT = 0;
-    static final int NR_OF_HABITS = 1;
+    public static final int HABIT_WORKOUT = 0;
+    public static final int NR_OF_HABITS = 1;
 
-    Habits() {
+    public Habits() {
     }
 
-    Habits readState(ObjectInputStream stream) throws IOException, ClassNotFoundException {
+    public Habits readState(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         _allHabits = (Habit[]) stream.readObject();
         Log.d(LOG_TAG, "Loaded habits from file.");
         return this;
     }
 
-    void writeState(ObjectOutputStream stream) throws IOException {
+    public void writeState(ObjectOutputStream stream) throws IOException {
         stream.writeObject(_allHabits);
     }
 
-    Habits initializeState() {
+    public Habits initializeState() {
         _allHabits = new Habit[NR_OF_HABITS];
         _allHabits[HABIT_WORKOUT] = Habit.newPositiveHabit(1, 12);
         Log.d(LOG_TAG, "Created new habits.");
@@ -43,15 +43,15 @@ public class Habits implements Serializable
         return this;
     }
 
-    Habit getHabit(int habit) {
+    public Habit getHabit(int habit) {
         return _allHabits[habit];
     }
 
-    Habit[] getAllHabits() {
+    public Habit[] getAllHabits() {
         return _allHabits;
     }
 
-    void updateState(Updater updater) {
+    public void updateState(Updater updater) {
         updater.updateAll(_allHabits);
     }
 

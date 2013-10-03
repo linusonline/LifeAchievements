@@ -1,8 +1,7 @@
-package se.lolektivet.linus.lifeachievements;
+package se.lolektivet.linus.lifeachievements.core;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class Habit implements Serializable

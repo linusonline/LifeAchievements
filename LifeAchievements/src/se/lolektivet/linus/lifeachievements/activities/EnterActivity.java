@@ -1,8 +1,14 @@
-package se.lolektivet.linus.lifeachievements;
+package se.lolektivet.linus.lifeachievements.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import se.lolektivet.linus.lifeachievements.AlwaysNewDayUpdater;
+import se.lolektivet.linus.lifeachievements.R;
+import se.lolektivet.linus.lifeachievements.SaveFileHandler;
+import se.lolektivet.linus.lifeachievements.core.Habits;
+import se.lolektivet.linus.lifeachievements.core.StandardUpdater;
+import se.lolektivet.linus.lifeachievements.core.TimeProviderImpl;
 
 import java.util.HashMap;
 import java.util.Map;

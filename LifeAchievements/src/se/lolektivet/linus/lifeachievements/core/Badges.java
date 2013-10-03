@@ -1,4 +1,6 @@
-package se.lolektivet.linus.lifeachievements;
+package se.lolektivet.linus.lifeachievements.core;
+
+import se.lolektivet.linus.lifeachievements.R;
 
 import java.io.Serializable;
 
@@ -12,13 +14,14 @@ public class Badges implements Serializable
 {
     private static final long serialVersionUID = 0x11FEC4EEB050003L;
     private Badge _allBadges[];
-    static final int BADGE_WORKOUT_2 = 0;
-    static final int BADGE_WORKOUT_3 = 1;
-    static final int BADGE_WORKOUT_4 = 2;
-    static final int BADGE_WORKOUT_5 = 3;
-    static final int NR_OF_BADGES = 4;
 
-    Badges(Habits habits) {
+    public static final int BADGE_WORKOUT_2 = 0;
+    public static final int BADGE_WORKOUT_3 = 1;
+    public static final int BADGE_WORKOUT_4 = 2;
+    public static final int BADGE_WORKOUT_5 = 3;
+    public static final int NR_OF_BADGES = 4;
+
+    public Badges(Habits habits) {
         _allBadges = new Badge[NR_OF_BADGES];
 
         // Create badges from achievements and habits.
@@ -52,11 +55,11 @@ public class Badges implements Serializable
 
     }
 
-    Badge getBadge(int badge) {
+    public Badge getBadge(int badge) {
         return _allBadges[badge];
     }
 
-    Badge[] getAllBadges() {
+    public Badge[] getAllBadges() {
         return _allBadges;
     }
 

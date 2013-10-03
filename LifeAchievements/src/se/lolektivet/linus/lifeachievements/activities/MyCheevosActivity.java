@@ -1,10 +1,13 @@
-package se.lolektivet.linus.lifeachievements;
+package se.lolektivet.linus.lifeachievements.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
+import se.lolektivet.linus.lifeachievements.R;
+import se.lolektivet.linus.lifeachievements.SaveFileHandler;
+import se.lolektivet.linus.lifeachievements.core.*;
 
 import java.util.ArrayList;
 import java.util.List;
