@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Linus
@@ -16,6 +19,8 @@ public class EnterActivity extends Activity
 
     private static final String INSTANCE_STATE_KEY_HABITS = "Habits";
 
+    private Map<Integer, Integer> _buttonIdsForHabits = new HashMap<Integer, Integer>(Habits.NR_OF_HABITS);
+
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
@@ -26,11 +31,31 @@ public class EnterActivity extends Activity
                 _habits = (Habits) savedInstanceState.getSerializable(INSTANCE_STATE_KEY_HABITS);
             }
         }
+        _buttonIdsForHabits.put(Habits.HABIT_WORKOUT, R.id.button_workout);
     }
 
     public void enteredActivity(View button) {
         if (button.getId() == R.id.button_workout) {
-            _habits.getHabit(Habits.HABIT_WORKOUT).doActivity();
+            doActivityForHabit(Habits.HABIT_WORKOUT);
+        }
+    }
+
+    public void newDayCheat(View button) {
+        _habits.updateState(new AlwaysNewDayUpdater());
+        refresh();
+    }
+
+    private void doActivityForHabit(int habitId) {
+        _habits.getHabit(habitId).doActivity();
+        if (_habits.getHabit(habitId).isMaxedOutToday()) {
+            findViewById(_buttonIdsForHabits.get(habitId)).setEnabled(false);
+        }
+    }
+
+    private void refresh() {
+        _habits.updateState(new StandardUpdater(new TimeProviderImpl()));
+        if (!_habits.getHabit(Habits.HABIT_WORKOUT).isMaxedOutToday()) {
+            findViewById(R.id.button_workout).setEnabled(true);
         }
     }
 
@@ -55,6 +80,6 @@ public class EnterActivity extends Activity
         if (_habits == null) {
             _habits = new SaveFileHandler().readHabitsFromFile(this);
         }
-        _habits.updateState(new Updater(new TimeProviderImpl()));
+        refresh();
     }
 }

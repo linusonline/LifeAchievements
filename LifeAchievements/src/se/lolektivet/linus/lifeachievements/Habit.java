@@ -14,6 +14,7 @@ public class Habit implements Serializable
 
     private List<Integer> _nrOfTimesActivityWasDoneLastXWeeks;
     private int _nrOfTimesActivityWasDoneThisWeek;
+    private int _nrOfTimesActivityWasDoneToday;
     private final int MAX_TIMES_PER_DAY;
 
     public static Habit newPositiveHabit(int maxTimesPerDay, int maxWeeks) {
@@ -33,6 +34,7 @@ public class Habit implements Serializable
         MAX_TIMES_PER_DAY = maxTimesPerDay;
         _nrOfTimesActivityWasDoneLastXWeeks = new ArrayList<Integer>(MAX_WEEKS);
         _nrOfTimesActivityWasDoneThisWeek = negativeHabit ? 1000 : 0;
+        _nrOfTimesActivityWasDoneToday = 0;
         for (int i = 0; i < MAX_WEEKS; i++) {
             _nrOfTimesActivityWasDoneLastXWeeks.add(negativeHabit ? 1000 : 0);
         }
@@ -62,9 +64,20 @@ public class Habit implements Serializable
         return nrOfWeeks;
     }
 
+    public boolean isMaxedOutToday() {
+        return _nrOfTimesActivityWasDoneToday >= MAX_TIMES_PER_DAY;
+    }
+
     public void doActivity() {
+        if (isMaxedOutToday()) {
+            throw new IllegalStateException("Cannot do activity more times without calling newDay first!");
+        }
         _nrOfTimesActivityWasDoneThisWeek++;
-        // _nrOfTimesActivityWasDoneLastXWeeks.set(NEWEST_WEEK, _nrOfTimesActivityWasDoneLastXWeeks.get(NEWEST_WEEK) + 1);
+        _nrOfTimesActivityWasDoneToday++;
+    }
+
+    public void newDay() {
+        _nrOfTimesActivityWasDoneToday = 0;
     }
 
     public void newWeek() {

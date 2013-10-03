@@ -56,7 +56,6 @@ public class BadgeArrayAdapter extends ArrayAdapter<Badge>
 
         Badge item = getItem(position);
         imageView.setImageResource(item.getImageResource());
-        // TODO: Set the image based on the achievement.
 
         return view;
     }

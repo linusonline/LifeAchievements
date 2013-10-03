@@ -39,7 +39,7 @@ public class Habits implements Serializable
         _allHabits = new Habit[NR_OF_HABITS];
         _allHabits[HABIT_WORKOUT] = Habit.newPositiveHabit(1, 12);
         Log.d(LOG_TAG, "Created new habits.");
-        simulateHabits();
+        // simulateHabits();
         return this;
     }
 
@@ -57,28 +57,46 @@ public class Habits implements Serializable
 
     private void simulateHabits() {
         _allHabits[HABIT_WORKOUT].doActivity();
+        _allHabits[HABIT_WORKOUT].newDay();
         _allHabits[HABIT_WORKOUT].doActivity();
+        _allHabits[HABIT_WORKOUT].newDay();
         _allHabits[HABIT_WORKOUT].doActivity();
+        _allHabits[HABIT_WORKOUT].newDay();
         _allHabits[HABIT_WORKOUT].newWeek();
         _allHabits[HABIT_WORKOUT].doActivity();
+        _allHabits[HABIT_WORKOUT].newDay();
         _allHabits[HABIT_WORKOUT].doActivity();
+        _allHabits[HABIT_WORKOUT].newDay();
         _allHabits[HABIT_WORKOUT].doActivity();
+        _allHabits[HABIT_WORKOUT].newDay();
         _allHabits[HABIT_WORKOUT].newWeek();
         _allHabits[HABIT_WORKOUT].doActivity();
+        _allHabits[HABIT_WORKOUT].newDay();
         _allHabits[HABIT_WORKOUT].doActivity();
+        _allHabits[HABIT_WORKOUT].newDay();
         _allHabits[HABIT_WORKOUT].doActivity();
+        _allHabits[HABIT_WORKOUT].newDay();
         _allHabits[HABIT_WORKOUT].newWeek();
         _allHabits[HABIT_WORKOUT].doActivity();
+        _allHabits[HABIT_WORKOUT].newDay();
         _allHabits[HABIT_WORKOUT].doActivity();
+        _allHabits[HABIT_WORKOUT].newDay();
         _allHabits[HABIT_WORKOUT].doActivity();
+        _allHabits[HABIT_WORKOUT].newDay();
         _allHabits[HABIT_WORKOUT].newWeek();
         _allHabits[HABIT_WORKOUT].doActivity();
+        _allHabits[HABIT_WORKOUT].newDay();
         _allHabits[HABIT_WORKOUT].doActivity();
+        _allHabits[HABIT_WORKOUT].newDay();
         _allHabits[HABIT_WORKOUT].doActivity();
+        _allHabits[HABIT_WORKOUT].newDay();
         _allHabits[HABIT_WORKOUT].newWeek();
         _allHabits[HABIT_WORKOUT].doActivity();
+        _allHabits[HABIT_WORKOUT].newDay();
         _allHabits[HABIT_WORKOUT].doActivity();
+        _allHabits[HABIT_WORKOUT].newDay();
         _allHabits[HABIT_WORKOUT].doActivity();
+        _allHabits[HABIT_WORKOUT].newDay();
         _allHabits[HABIT_WORKOUT].newWeek();
     }
 }

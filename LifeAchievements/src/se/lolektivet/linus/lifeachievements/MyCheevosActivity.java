@@ -63,7 +63,7 @@ public class MyCheevosActivity extends Activity {
         if (_habits == null) {
             _habits = new SaveFileHandler().readHabitsFromFile(this);
         }
-        _habits.updateState(new Updater(new TimeProviderImpl()));
+        _habits.updateState(new StandardUpdater(new TimeProviderImpl()));
         //_habits.initializeState();
         if (_badges == null) {
             _badges = new Badges(_habits);
