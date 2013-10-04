@@ -1,8 +1,6 @@
 package se.lolektivet.linus.lifeachievements.core;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,7 +11,7 @@ import java.util.List;
 public class AchievementPattern implements Serializable
 {
     private static final long serialVersionUID = 0x11FEC4EEB050004L;
-    private List<Integer> _weeksOfStreakForEachLevel = new ArrayList<Integer>(4);
+    private Integer _weeksOfStreakForEachLevel[] = new Integer[4];
     private int _minOrMaxTimesPerWeek;
 
     public AchievementPattern(int weeksForLevel1, int weeksForLevel2, int weeksForLevel3, int weeksForLevel4, int minOrMaxTimesPerWeek) {
@@ -23,27 +21,24 @@ public class AchievementPattern implements Serializable
                 weeksForLevel3 > weeksForLevel4) {
             throw new RuntimeException("Nr of weeks must be same or higher for each consecutive level.");
         }
-        _weeksOfStreakForEachLevel.add(weeksForLevel1);
-        _weeksOfStreakForEachLevel.add(weeksForLevel2);
-        _weeksOfStreakForEachLevel.add(weeksForLevel3);
-        _weeksOfStreakForEachLevel.add(weeksForLevel4);
+        _weeksOfStreakForEachLevel[0] = weeksForLevel1;
+        _weeksOfStreakForEachLevel[1] = weeksForLevel2;
+        _weeksOfStreakForEachLevel[2] = weeksForLevel3;
+        _weeksOfStreakForEachLevel[3] = weeksForLevel4;
         _minOrMaxTimesPerWeek = minOrMaxTimesPerWeek;
     }
 
     public int getLevelForHabit(Habit habit) {
-        int level = 0;
+        int weeksOfStreak;
         if (habit.isPositive()) {
-            for (Integer minWeeks : _weeksOfStreakForEachLevel) {
-                if (habit.nrOfWeeksActivityHasBeenDone(_minOrMaxTimesPerWeek) >= minWeeks) {
-                    level++;
-                }
-            }
+            weeksOfStreak = habit.nrOfWeeksActivityHasBeenDone(_minOrMaxTimesPerWeek);
         } else {
-            for (Integer minWeeks : _weeksOfStreakForEachLevel) {
-                if (habit.nrOfWeeksActivityHasBeenAvoided(_minOrMaxTimesPerWeek) >= minWeeks) {
-                    level++;
-                }
-            }
+            weeksOfStreak = habit.nrOfWeeksActivityHasBeenAvoided(_minOrMaxTimesPerWeek);
+        }
+
+        int level = 0;
+        while (level < 4 && weeksOfStreak >= _weeksOfStreakForEachLevel[level]) {
+            level++;
         }
         return level;
     }
