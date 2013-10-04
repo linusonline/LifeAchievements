@@ -20,12 +20,6 @@ public class MyCheevosActivity extends Activity {
     private Habits _habits = null;
     private Badges _badges = null;
 
-    public void enteredActivity(View button) {
-        if (button.getId() == R.id.button_workout) {
-            _habits.getHabit(Habits.HABIT_WORKOUT).doActivity();
-        }
-    }
-
     private Badge[] getUnlockedBadges() {
         List<Badge> unlockedBadges = new ArrayList<Badge>();
         for (Badge badge : _badges.getAllBadges()) {
@@ -67,7 +61,6 @@ public class MyCheevosActivity extends Activity {
             _habits = new SaveFileHandler().readHabitsFromFile(this);
         }
         _habits.updateState(new StandardUpdater(new TimeProviderImpl()));
-        //_habits.initializeState();
         if (_badges == null) {
             _badges = new Badges(_habits);
         }

@@ -15,6 +15,7 @@ public class Habit implements Serializable
     private int _nrOfTimesActivityWasDoneThisWeek;
     private int _nrOfTimesActivityWasDoneToday;
     private final int MAX_TIMES_PER_DAY;
+    public static final int INFINITY = 1000000;
 
     public static Habit newPositiveHabit(int maxTimesPerDay, int maxWeeks) {
         if (maxTimesPerDay < 1) {
@@ -32,10 +33,10 @@ public class Habit implements Serializable
         NEWEST_WEEK = MAX_WEEKS - 1;
         MAX_TIMES_PER_DAY = maxTimesPerDay;
         _nrOfTimesActivityWasDoneLastXWeeks = new ArrayList<Integer>(MAX_WEEKS);
-        _nrOfTimesActivityWasDoneThisWeek = negativeHabit ? 1000 : 0;
+        _nrOfTimesActivityWasDoneThisWeek = negativeHabit ? INFINITY : 0;
         _nrOfTimesActivityWasDoneToday = 0;
         for (int i = 0; i < MAX_WEEKS; i++) {
-            _nrOfTimesActivityWasDoneLastXWeeks.add(negativeHabit ? 1000 : 0);
+            _nrOfTimesActivityWasDoneLastXWeeks.add(negativeHabit ? INFINITY : 0);
         }
     }
 
@@ -61,6 +62,10 @@ public class Habit implements Serializable
             nrOfWeeks += 1;
         }
         return nrOfWeeks;
+    }
+
+    public int nrOfTimesActivityWasDoneThisWeek() {
+        return _nrOfTimesActivityWasDoneThisWeek;
     }
 
     public boolean isMaxedOutToday() {

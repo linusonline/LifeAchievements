@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">MainActivity</string><string name="enter_workout">I worked out today!</string>
+    <string name="app_name">Life Achievements</string>
+    <string name="enter_workout_enabled">I worked out today!</string>
+    <string name="enter_workout_disabled">You have already worked out today!</string>
+    <string name="workout_count_text_1">You have worked out</string>
+    <string name="workout_count_text_2">times this week.</string>
 </resources>

@@ -26,28 +26,28 @@ public class Badges implements Serializable
 
         // Create badges from achievements and habits.
         AchievementPattern workoutAchievement2Pattern = new AchievementPattern(2, 4, 8, 12, 2);
-        _allBadges[BADGE_WORKOUT_2] = new Badge(workoutAchievement2Pattern, habits.getHabit(Habits.HABIT_WORKOUT),
+        _allBadges[BADGE_WORKOUT_2] = new Badge(workoutAchievement2Pattern, habits.getHabit(HabitId.WORKOUT),
                 R.drawable.workout_2_earth,
                 R.drawable.workout_2_wood,
                 R.drawable.workout_2_rock,
                 R.drawable.workout_2_diamond);
 
         AchievementPattern workoutAchievement3Pattern = new AchievementPattern(2, 4, 6, 10, 3);
-        _allBadges[BADGE_WORKOUT_3] = new Badge(workoutAchievement3Pattern, habits.getHabit(Habits.HABIT_WORKOUT),
+        _allBadges[BADGE_WORKOUT_3] = new Badge(workoutAchievement3Pattern, habits.getHabit(HabitId.WORKOUT),
                 R.drawable.workout_3_earth,
                 R.drawable.workout_3_wood,
                 R.drawable.workout_3_rock,
                 R.drawable.workout_3_diamond);
 
         AchievementPattern workoutAchievement4Pattern = new AchievementPattern(1, 2, 4, 6, 4);
-        _allBadges[BADGE_WORKOUT_4] = new Badge(workoutAchievement4Pattern, habits.getHabit(Habits.HABIT_WORKOUT),
+        _allBadges[BADGE_WORKOUT_4] = new Badge(workoutAchievement4Pattern, habits.getHabit(HabitId.WORKOUT),
                 R.drawable.workout_4_earth,
                 R.drawable.workout_4_wood,
                 R.drawable.workout_4_rock,
                 R.drawable.workout_4_diamond);
 
         AchievementPattern workoutAchievement5Pattern = new AchievementPattern(1, 2, 3, 5, 5);
-        _allBadges[BADGE_WORKOUT_5] = new Badge(workoutAchievement5Pattern, habits.getHabit(Habits.HABIT_WORKOUT),
+        _allBadges[BADGE_WORKOUT_5] = new Badge(workoutAchievement5Pattern, habits.getHabit(HabitId.WORKOUT),
                 R.drawable.workout_5_earth,
                 R.drawable.workout_5_wood,
                 R.drawable.workout_5_rock,

@@ -19,8 +19,8 @@ public class Habits implements Serializable
     private static final String LOG_TAG = "LifeAchievements";
 
     private Habit _allHabits[];
-    public static final int HABIT_WORKOUT = 0;
-    public static final int NR_OF_HABITS = 1;
+
+    public static final int NR_OF_HABITS = HabitId.values().length;
 
     public Habits() {
     }
@@ -37,14 +37,14 @@ public class Habits implements Serializable
 
     public Habits initializeState() {
         _allHabits = new Habit[NR_OF_HABITS];
-        _allHabits[HABIT_WORKOUT] = Habit.newPositiveHabit(1, 12);
+        _allHabits[HabitId.WORKOUT.n()] = Habit.newPositiveHabit(1, 12);
         Log.d(LOG_TAG, "Created new habits.");
         // simulateHabits();
         return this;
     }
 
-    public Habit getHabit(int habit) {
-        return _allHabits[habit];
+    public Habit getHabit(HabitId habit) {
+        return _allHabits[habit.n()];
     }
 
     public Habit[] getAllHabits() {
@@ -56,47 +56,47 @@ public class Habits implements Serializable
     }
 
     private void simulateHabits() {
-        _allHabits[HABIT_WORKOUT].doActivity();
-        _allHabits[HABIT_WORKOUT].newDay();
-        _allHabits[HABIT_WORKOUT].doActivity();
-        _allHabits[HABIT_WORKOUT].newDay();
-        _allHabits[HABIT_WORKOUT].doActivity();
-        _allHabits[HABIT_WORKOUT].newDay();
-        _allHabits[HABIT_WORKOUT].newWeek();
-        _allHabits[HABIT_WORKOUT].doActivity();
-        _allHabits[HABIT_WORKOUT].newDay();
-        _allHabits[HABIT_WORKOUT].doActivity();
-        _allHabits[HABIT_WORKOUT].newDay();
-        _allHabits[HABIT_WORKOUT].doActivity();
-        _allHabits[HABIT_WORKOUT].newDay();
-        _allHabits[HABIT_WORKOUT].newWeek();
-        _allHabits[HABIT_WORKOUT].doActivity();
-        _allHabits[HABIT_WORKOUT].newDay();
-        _allHabits[HABIT_WORKOUT].doActivity();
-        _allHabits[HABIT_WORKOUT].newDay();
-        _allHabits[HABIT_WORKOUT].doActivity();
-        _allHabits[HABIT_WORKOUT].newDay();
-        _allHabits[HABIT_WORKOUT].newWeek();
-        _allHabits[HABIT_WORKOUT].doActivity();
-        _allHabits[HABIT_WORKOUT].newDay();
-        _allHabits[HABIT_WORKOUT].doActivity();
-        _allHabits[HABIT_WORKOUT].newDay();
-        _allHabits[HABIT_WORKOUT].doActivity();
-        _allHabits[HABIT_WORKOUT].newDay();
-        _allHabits[HABIT_WORKOUT].newWeek();
-        _allHabits[HABIT_WORKOUT].doActivity();
-        _allHabits[HABIT_WORKOUT].newDay();
-        _allHabits[HABIT_WORKOUT].doActivity();
-        _allHabits[HABIT_WORKOUT].newDay();
-        _allHabits[HABIT_WORKOUT].doActivity();
-        _allHabits[HABIT_WORKOUT].newDay();
-        _allHabits[HABIT_WORKOUT].newWeek();
-        _allHabits[HABIT_WORKOUT].doActivity();
-        _allHabits[HABIT_WORKOUT].newDay();
-        _allHabits[HABIT_WORKOUT].doActivity();
-        _allHabits[HABIT_WORKOUT].newDay();
-        _allHabits[HABIT_WORKOUT].doActivity();
-        _allHabits[HABIT_WORKOUT].newDay();
-        _allHabits[HABIT_WORKOUT].newWeek();
+        _allHabits[HabitId.WORKOUT.n()].doActivity();
+        _allHabits[HabitId.WORKOUT.n()].newDay();
+        _allHabits[HabitId.WORKOUT.n()].doActivity();
+        _allHabits[HabitId.WORKOUT.n()].newDay();
+        _allHabits[HabitId.WORKOUT.n()].doActivity();
+        _allHabits[HabitId.WORKOUT.n()].newDay();
+        _allHabits[HabitId.WORKOUT.n()].newWeek();
+        _allHabits[HabitId.WORKOUT.n()].doActivity();
+        _allHabits[HabitId.WORKOUT.n()].newDay();
+        _allHabits[HabitId.WORKOUT.n()].doActivity();
+        _allHabits[HabitId.WORKOUT.n()].newDay();
+        _allHabits[HabitId.WORKOUT.n()].doActivity();
+        _allHabits[HabitId.WORKOUT.n()].newDay();
+        _allHabits[HabitId.WORKOUT.n()].newWeek();
+        _allHabits[HabitId.WORKOUT.n()].doActivity();
+        _allHabits[HabitId.WORKOUT.n()].newDay();
+        _allHabits[HabitId.WORKOUT.n()].doActivity();
+        _allHabits[HabitId.WORKOUT.n()].newDay();
+        _allHabits[HabitId.WORKOUT.n()].doActivity();
+        _allHabits[HabitId.WORKOUT.n()].newDay();
+        _allHabits[HabitId.WORKOUT.n()].newWeek();
+        _allHabits[HabitId.WORKOUT.n()].doActivity();
+        _allHabits[HabitId.WORKOUT.n()].newDay();
+        _allHabits[HabitId.WORKOUT.n()].doActivity();
+        _allHabits[HabitId.WORKOUT.n()].newDay();
+        _allHabits[HabitId.WORKOUT.n()].doActivity();
+        _allHabits[HabitId.WORKOUT.n()].newDay();
+        _allHabits[HabitId.WORKOUT.n()].newWeek();
+        _allHabits[HabitId.WORKOUT.n()].doActivity();
+        _allHabits[HabitId.WORKOUT.n()].newDay();
+        _allHabits[HabitId.WORKOUT.n()].doActivity();
+        _allHabits[HabitId.WORKOUT.n()].newDay();
+        _allHabits[HabitId.WORKOUT.n()].doActivity();
+        _allHabits[HabitId.WORKOUT.n()].newDay();
+        _allHabits[HabitId.WORKOUT.n()].newWeek();
+        _allHabits[HabitId.WORKOUT.n()].doActivity();
+        _allHabits[HabitId.WORKOUT.n()].newDay();
+        _allHabits[HabitId.WORKOUT.n()].doActivity();
+        _allHabits[HabitId.WORKOUT.n()].newDay();
+        _allHabits[HabitId.WORKOUT.n()].doActivity();
+        _allHabits[HabitId.WORKOUT.n()].newDay();
+        _allHabits[HabitId.WORKOUT.n()].newWeek();
     }
 }
